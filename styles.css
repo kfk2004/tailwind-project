@@ -1,0 +1,50 @@
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+body > * {
+    position: relative;
+    z-index: 2;
+}
+/* styles.css */
+
+/* Container for proper alignment of elements */
+.big-test {
+    align-items: flex-start; /* Aligns items to the top of the container */
+}
+
+/* Image styling for proper sizing and positioning */
+.image-right {
+    height: 400px; /* Adjust the height as needed */
+    margin-right: 150px; /* Adjust margin to move the image slightly to the right */
+    margin-top: 100px;
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+    opacity: 0; /* Start with the image invisible */
+    transition: opacity 1s ease-in-out; /* Fade-in transition */
+}
+
+/* Apply the fade-in effect */
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
